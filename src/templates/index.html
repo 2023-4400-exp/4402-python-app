@@ -1,11 +1,24 @@
-{% for msg in data %}
-  <p>{{ msg }}</p>
-{% endfor %}
-
-<form action='/'>
+<html>
+<form id="form_msg" action='/'>
     <div>名前</div>
-    <input type="text" name="name">
+    <input id="user_name" type="text" name="name">
     <div>メッセージ</div>
-    <input type="text" name="msg">
+    <textarea name="msg"></textarea>
     <button type="submit" formmethod="POST">送信</button>
 </form>
+
+{% for msg in data %}
+<p>{{ msg }}</p>
+{% endfor %}
+
+<style>
+#form_msg {
+  border: 3px solid black;
+  padding: 4px;
+}
+</style>
+
+<script>
+  const el_user_name = document.getElementById("user_name")
+</script>
+</html>

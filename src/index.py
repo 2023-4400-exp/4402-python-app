@@ -24,9 +24,14 @@ def index_post():
     name = request.form["name"]
     msg = request.form["msg"]
     time = datetime.now()
+    ipaddr = request.remote_addr
+
+    if name == "":
+        name = "名無しさん"
 
     with open('/var/python-app/data.txt','a') as f:
-        f.write(f"{time} {name} {msg}\n")
+        f.write(f"{time} | {name} ({ipaddr})\n"
+                f"{msg}\n")
 
     return redirect("/")
 

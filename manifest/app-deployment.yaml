@@ -15,7 +15,7 @@ spec:
         app: python-app
     spec:
       containers:
-      - image: kazutosh/python-app
+      - image: ghcr.io/2023-4400-exp/4402-python-app:fa0262660a77d3ae6d01ab13a0560199caa42cf6@sha256:28b437f619962624bd12eb656bcf987af37ccd37a4e7b36703119ea02a46bad4
         name: python-app
         volumeMounts:
         - mountPath: /var/python-app
